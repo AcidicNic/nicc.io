@@ -26,9 +26,9 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.MONGODB_URI, {useCreateIndex: true, useNewUrlParser: true});
 mongoose.connection.on('error', (err) => {
-  console.error(err);
-  console.log('MongoDB connection error. Please make sure MongoDB is running.');
-  process.exit();
+    console.error(err);
+    console.log('MongoDB connection error. Please make sure MongoDB is running.');
+    process.exit();
 });
 
 // setting up imported css and JS shortcuts!
@@ -57,17 +57,17 @@ app.get('/add', projectController.add);
 
 
 let options = {
-   cert: cert,
-   ca: ca,
-   key: key
+    cert: cert,
+    ca: ca,
+    key: key
 };
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(options, app);
 
-httpServer.listen(80);
+// httpServer.listen(80);
 
-// httpsServer.listen(port, () => {
-//     console.log(`HTTPS Server running on port {port}`);
-// });
+httpsServer.listen(port, () => {
+    console.log(`HTTPS Server running on port {port}`);
+});
 
 // server.listen(port, () => console.log(`nicc.io test is live at http://localhost:${port}`));
