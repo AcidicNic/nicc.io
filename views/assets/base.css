@@ -1,0 +1,83 @@
+.content-wrapper {
+    width: 80vw;
+    margin-top: 5vh;
+}
+@keyframes bg_color {
+    0% {background-color: #ff5b5b;}
+    20% {background-color: #ffc75d;}
+    40% {background-color: #b8ff52;}
+    80% {background-color: #91f7ff;}
+    100% {background-color: #ff82d4;}
+}
+@keyframes txt_color {
+    /* 0% {color: #45a3e5}
+    30% {color: #66bf39}
+    60% {color: #eb670f}
+    90% {color: #f35}
+    100% {color: #864cbf} */
+    0% {color: #ff5b5b;}
+    20% {color: #ffc75d;}
+    40% {color: #b8ff52;}
+    80% {color: #91f7ff;}
+    100% {color: #ff82d4;}
+}
+@keyframes txt_border_color {
+    /* 0% {color: #45a3e5; border-color: #45a3e5;}
+    30% {color: #66bf39; border-color: #66bf39;}
+    60% {color: #eb670f; border-color: #eb670f;}
+    90% {color: #f35; border-color: #f35;}
+    100% {color: #864cbf; border-color: #864cbf;} */
+
+    0% {color: #ff5b5b; border-color: #ff5b5b;}
+    20% {color: #ffc75d; border-color: #ffc75d;}
+    40% {color: #b8ff52; border-color: #b8ff52;}
+    80% {color: #91f7ff; border-color: #91f7ff;}
+    100% {color: #ff82d4; border-color: #ff82d4;}
+}
+
+body {
+    font-family: Ubuntu;
+}
+
+body {
+    -webkit-animation: bg_color 20s infinite;
+    animation: bg_color 20s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+.btn_nav {
+    -webkit-animation: txt_border_color 20s infinite;
+    animation: txt_border_color 20s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+.btn:hover {
+    color: white;
+}
+
+.footer_text, .title-text {
+    -webkit-animation: txt_color 20s infinite;
+    animation: txt_color 20s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+.txt-trans, .txt-trans:hover {
+    color: rgb(0, 0, 0, .65)
+}
+
+/* My dynamic footer! :) */
+html, body {
+    min-height: 100vh;
+}
+.page-wrapper {
+    min-height: 90vh; /* 100vh - your footer height */
+    display: block;
+}
+#footer {
+    height: 10vh; /* Your height may vary */
+}
+.no_ul:hover {
+    text-decoration: none;
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>nicc.io
+        {{#if title includeZero=true}} - {{title}}{{/if}}
+    </title>
+    <meta name="description" content="Nicole's Portfolio">
+    <meta name="author" content="Nicole Rocha Abadie">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favi/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favi/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favi/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Bootstrap -->
+    <link href="/bs/css/bootstrap.css" rel="stylesheet">
+    <!-- fontawesome -->
+    <link href="/fas/css/all.css" rel="stylesheet">
+    <!-- My CSS -->
+    <link href="/base.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-light bg-dark justify-content-start">
+            <a class="navbar-brand" href="/">
+                <!-- <img src="frog.jpeg" width="40" height="40" class="d-inline-block align-top rounded" alt=""> -->
+                <i class="fas fa-laptop-code h2 title-text d-inline-block align-top mt-1"></i>
+                <span class="h2 title-text mx-2">nicc.io</span>
+            </a>
+            <div class="d-flex justify-content-start">
+                <!-- <div class="dropdown">
+                    <button class="btn btn_nav dropdown-toggle mr-3" value="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Projects
+                    </button>
+                    <div class="dropdown-menu bg-secondary" aria-labelledby="dropdownMenuLink">
+                        {{#if projects}}
+                            {{#each projects}}
+                                <a class="dropdown-item" href="/{{this._id}}/{{this.slug}}">{{this.title}}</a>
+                            {{/each}}
+                        {{else}}
+                            <a class="dropdown-item" href="https://github.com/acidicnic">github.com/AcidicNic</a>
+                        {{/if}}
+                    </div>
+                </div> -->
+
+                <!--  -->
+                {{#unless projects}}
+                    <a class="btn btn_nav mr-3" href="/">Projects</a>
+                {{/unless}}
+                {{#unless about}}
+                    <a class="btn btn_nav mr-3" href="/about">About Me</a>
+                {{/unless}}
+
+            </div>
+        </nav>
+
+        <!-- Body Container -->
+        <div class="content-wrapper mx-auto txt-trans">
+            {{{ body }}}
+        </div>
+
+    </div>
+
+    <footer id="footer" class="w-100 text-center bg-dark">
+        <div class="h-100 d-flex justify-content-center align-items-center">
+            <a class="footer_text mx-2" href="https://www.linkedin.com/in/nicoleabadie/">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a class="footer_text mx-2" href="mailto: nic4096@gmail.com">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a class="footer_text mx-2" href="https://github.com/AcidicNic">
+                <i class="fab fa-github"></i> Github
+            </a>
+            <a class="footer_text mx-2" href="https://www.makeschool.com/portfolio/nicoleAbadie">
+                <i class="fas fa-gem"></i> School Portfolio
+            </a>
+            <a class="footer_text mx-2" href="https://twitter.com/niccsuccs">
+                <i class="fab fa-twitter"></i> Twitter
+            </a>
+        </div>
+    </footer>
+
+    <!-- jQuery, Popper, and Bootstrap JS -->
+    <script src="/jquery/jquery.js"></script>
+    <script src="/popper/popper.js"></script>
+    <script src="/bs/js/bootstrap.js"></script>
+    <!-- fontawesome -->
+    <script src="/fas/js/all.js"></script>
+
+</body>
+</html>

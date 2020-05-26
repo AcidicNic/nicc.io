@@ -1,0 +1,10 @@
+{{#if projects}}
+    {{#each projects}}
+        <div class="w-50 mx-auto text-center">
+            <a class="txt-trans no_ul h1" href="/{{this.slug}}">{{this.title}}</a>
+            <p class="txt-trans"><small>{{this.desc}}</small></p>
+        </div>
+    {{/each}}
+{{else}}
+    nothin
+{{/if}}
