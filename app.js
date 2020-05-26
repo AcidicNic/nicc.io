@@ -3,11 +3,12 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const slug = require('mongoose-url-slugs');
-const https = require('https');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 
 // SSL stuff
+const https = require('https');
+const http = require('http');
 const fs = require('fs');
 const cert = fs.readFileSync(__dirname + '/ssl/www_nicc_io.crt');
 const ca = fs.readFileSync('./ssl/www_nicc_io.ca-bundle');
@@ -60,5 +61,15 @@ let options = {
    ca: ca,
    key: key
 };
-const server = https.createServer(options, app);
-server.listen(port, () => console.log(`nicc.io test is live at http://localhost:${port}`));
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(options, app);
+
+httpServer.listen(80, () => {
+    console.log('HTTP Server running on port 80');
+});
+
+httpsServer.listen(port, () => {
+    console.log(`HTTPS Server running on port {port}`);
+});
+
+// server.listen(port, () => console.log(`nicc.io test is live at http://localhost:${port}`));
