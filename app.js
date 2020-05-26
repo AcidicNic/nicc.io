@@ -61,12 +61,10 @@ let options = {
    ca: ca,
    key: key
 };
-const httpServer = http.createServer(app);
+// const httpServer = http.createServer(app);
 const httpsServer = https.createServer(options, app);
 
-httpServer.listen(port, () => {
-    console.log('HTTP Server running on port 80');
-});
+httpServer.listen(port, "nicc.io");
 
 // httpsServer.listen(port, () => {
 //     console.log(`HTTPS Server running on port {port}`);
