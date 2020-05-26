@@ -64,7 +64,7 @@ let options = {
 // const httpServer = http.createServer(app);
 const httpsServer = https.createServer(options, app);
 
-httpServer.listen(port, "nicc.io");
+httpsServer.listen(port, "nicc.io");
 
 // httpsServer.listen(port, () => {
 //     console.log(`HTTPS Server running on port {port}`);
