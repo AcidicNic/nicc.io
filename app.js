@@ -3,6 +3,7 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const slug = require('mongoose-url-slugs');
+const http = require('http');
 
 const port = process.env.PORT || 3000;
 
@@ -59,5 +60,5 @@ let options = {
    ca: ca,
    key: key
 };
-const server = https.createServer(options, app)
+const server = https.createServer(options, app);
 server.listen(port, () => console.log(`nicc.io test is live at http://localhost:${port}`));
