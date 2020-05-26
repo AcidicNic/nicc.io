@@ -24,7 +24,7 @@ const app = express()
 mongoose.plugin(slug);
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, {useCreateIndex: true, useNewUrlParser: true});
 mongoose.connection.on('error', (err) => {
   console.error(err);
   console.log('MongoDB connection error. Please make sure MongoDB is running.');
@@ -61,10 +61,10 @@ let options = {
    ca: ca,
    key: key
 };
-// const httpServer = http.createServer(app);
+const httpServer = http.createServer(app);
 const httpsServer = https.createServer(options, app);
 
-httpsServer.listen(port, "nicc.io");
+httpServer.listen(80);
 
 // httpsServer.listen(port, () => {
 //     console.log(`HTTPS Server running on port {port}`);
