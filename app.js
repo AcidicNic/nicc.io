@@ -64,12 +64,12 @@ let options = {
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(options, app);
 
-httpServer.listen(80, () => {
+httpServer.listen(port, () => {
     console.log('HTTP Server running on port 80');
 });
 
-httpsServer.listen(port, () => {
-    console.log(`HTTPS Server running on port {port}`);
-});
+// httpsServer.listen(port, () => {
+//     console.log(`HTTPS Server running on port {port}`);
+// });
 
 // server.listen(port, () => console.log(`nicc.io test is live at http://localhost:${port}`));
