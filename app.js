@@ -3,7 +3,7 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const slug = require('mongoose-url-slugs');
-const http = require('http');
+const https = require('https');
 
 const port = process.env.PORT || 3000;
 
