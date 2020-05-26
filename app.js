@@ -4,6 +4,8 @@ const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const slug = require('mongoose-url-slugs');
 
+const port = process.env.PORT || 3000;
+
 // Importing controllers
 const mainController = require('./controllers/main');
 const projectController = require('./controllers/project');
@@ -45,5 +47,5 @@ app.get('/about', mainController.about);
 app.get('/:slug', projectController.showProject);
 app.get('/add', projectController.add);
 
-const port = process.env.PORT || 666
-app.listen(port, () => console.log(`nicc.io test is live at http://localhost:${port}`))
+
+app.listen(port, () => console.log(`nicc.io test is live at http://localhost:${port}`));
