@@ -6,6 +6,12 @@ const slug = require('mongoose-url-slugs');
 
 const port = process.env.PORT || 3000;
 
+// SSL stuff
+const fs = require('fs');
+const cert = fs.readFileSync(__dirname + '/ssl/www_nicc_io.crt');
+const ca = fs.readFileSync('./ssl/www_nicc_io.ca-bundle');
+const key = fs.readFileSync('./ssl/nicc_io.key');
+
 // Importing controllers
 const mainController = require('./controllers/main');
 const projectController = require('./controllers/project');
@@ -48,4 +54,12 @@ app.get('/:slug', projectController.showProject);
 app.get('/add', projectController.add);
 
 
-app.listen(port, () => console.log(`nicc.io test is live at http://localhost:${port}`));
+let options = {
+   cert: cert,
+   ca: ca,
+   key: key
+};
+var server = https.createServer(options, app).listen(port, function(){
+  console.log(`nicc.io test is live at http://localhost:${port}`);
+});
+// app.listen(port, () => console.log(`nicc.io test is live at http://localhost:${port}`));

@@ -26,6 +26,7 @@
     "jquery": "^3.5.1",
     "mongoose": "^5.9.15",
     "mongoose-url-slugs": "^1.0.2",
+    "openssl": "^1.1.0",
     "popper.js": "^1.16.1"
   }
 }
