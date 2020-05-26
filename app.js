@@ -59,7 +59,5 @@ let options = {
    ca: ca,
    key: key
 };
-var server = https.createServer(options, app).listen(port, function(){
-  console.log(`nicc.io test is live at http://localhost:${port}`);
-});
-// app.listen(port, () => console.log(`nicc.io test is live at http://localhost:${port}`));
+const server = https.createServer(options, app)
+server.listen(port, () => console.log(`nicc.io test is live at http://localhost:${port}`));
