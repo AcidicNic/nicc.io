@@ -1,2 +1,2 @@
-# Source Code for [nicc.io](https://www.nicc.io) <3
+# Source Code for [nicc.io](https://nicc.io) <3
 My portfolio
